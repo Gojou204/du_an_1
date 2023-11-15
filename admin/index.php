@@ -1,20 +1,27 @@
 <?php
     include "header.php";
-    if(isset($_GET['act']) && ($_GET['act'] != "")) {
+    include "menu.php";
+
+    if(isset($_GET['act']) && ($_GET['act']) != "") {
         $act = $_GET['act'];
 
         switch ($act) {
-            case 'khachsan' :
+            case 'khachsan':
                 include "khachsan.php";
                 break;
-            case 'loaiphong' :
+
+            case 'loaiphong':
                 include "loaiphong.php";
                 break;
+
+            default:
+                echo "<h1>ĐƯỜNG DẪN KHÔNG XÁC ĐỊNH!</h1>
+                <a href='index.php' style='color: blue'>Quay lại trang chủ</a>";
+                break;
         }
-        
     }
     else {
         include "home.php";
     }
-   
+    include "footer.php";
 ?>
