@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.admin_logout{
+    display: flex;
+    margin: 25px 40px;
+}
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 30px;
+}
+button{
+    width: 70px;
+    height: 30px;
+    margin-top: 5px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+}
+ul li{
+    list-style: none;
+    margin: 10px 40px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+ul li a:hover{
+    color: chocolate;
+}
