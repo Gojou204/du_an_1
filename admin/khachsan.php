@@ -1,42 +1,55 @@
+<!-- Content -->
+<main>
+    <div class="top_main">
+        <div class="title">
+            <h1>DANH SÁCH KHÁCH SẠN</h1>
+        </div>
 
-    <main>
-        <table border="1">
+        <div class="add">
+            <button type="button"><a href="#">Thêm mới</a></button>
+        </div>
+    </div>
+
+    <div class="main_content">
+        <table>
             <tr>
-                <th>Thành phố</th>
                 <th>Tên khách sạn</th>
                 <th>Hình ảnh</th>
                 <th>Địa chỉ</th>
+                <th>Mô tả</th>
                 <th>Lượt xem</th>
-                <th>Giới thiệu</th>
-                <th></th>
+                <th>Tools</th>
             </tr>
+
             <tr>
-                <td>Hà Nội</td>
-                <td>Hoàng Đế</td>
-                <td><img src="" alt=""></td>
-                <td>Hà Đông, Hà Nội</td>
-                <td>11245</td>
-                <td>Khách sạn cho vua</td>
-                <td></td>
+                <td>Ana Madara Resort & Spa</td>
                 <td>
-                    <a href="#">Update</a>
-                    <a href="#">Delete</a>
+                    <img src="" alt="">
+                </td>
+                <td>Đà Lạt - Việt Nam</td>
+                <td>Nơi có vô vàn dịch vụ tiêu chuẩn khách sạn 5 sao tại Đà Lạt</td>
+                <td>500</td>
+                <td>
+                    <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="#"><i class="fa-solid fa-trash red"></i></a>
                 </td>
             </tr>
+
             <tr>
-                <td>Hồ Chí Minh</td>
-                <td>Chí tôn</td>
-                <td><img src="" alt=""></td>
-                <td>Quận 5, Hồ Chí Minh</td>
-                <td>15463</td>
-                <td>Khách sạn cho đồng bo</td>
-                <td></td>
+                <td>Hoàn Kiếm Hotel</td>
                 <td>
-                    <a href="#">Update</a>
-                    <a href="#">Delete</a>
+                    <img src="" alt="">
+                </td>
+                <td>Hà Nội - Việt Nam</td>
+                <td>Nơi cung cấp khách hàng trải nghiệm hàng đầu khi tới với Hoàn Kiếm Hotel</td>
+                <td>300</td>
+                <td>
+                    <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="#"><i class="fa-solid fa-trash red"></i></a>
                 </td>
             </tr>
         </table>
-    </main>
-</body>
-</html>
+    </div>
+</main>
+<!-- End Content -->
+</div>
