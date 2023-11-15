@@ -1,33 +1,107 @@
-*{
-    margin: 0;
+* {
     padding: 0;
-}
-.admin_logout{
-    display: flex;
-    margin: 25px 40px;
-}
-h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-right: 30px;
-}
-button{
-    width: 70px;
-    height: 30px;
-    margin-top: 5px;
-}
-ul{
-    display: flex;
-    justify-content: center;
-}
-ul li{
+    margin: 0;
     list-style: none;
-    margin: 10px 40px;
-}
-ul li a{
     text-decoration: none;
+    box-sizing: border-box;
     color: black;
-    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-ul li a:hover{
-    color: chocolate;
+
+/* Dùng để đặt content không dính 2 bên màn hình */
+.grid {
+    width: 1000px;
+    margin: 0 auto;
 }
+
+/* Header */
+header {
+    background-color: black;
+    padding: 20px 0;
+}
+
+.header b{
+    font-size: 32px;
+    color: white;
+}
+/* end header */
+
+/* Menu */
+nav {
+    background-color: whitesmoke;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    transition: transform 0.3s ease;
+    transform-origin: center top;
+}
+
+
+nav ul li:hover {
+    border: 1px solid black;
+    box-sizing: content-box;
+    transform: scale(1.1);
+}
+/* end menu */
+
+/* Main */
+/* tiêu đề + thêm mới */
+.top_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Nút thêm mới */
+.add button{
+    padding: 3px 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+/* content chính */
+table {
+    border: 1px solid gray;
+    width: 100%;
+    border-collapse:collapse;
+}
+
+th {
+    background-color: gray;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+td {
+    padding:5px;
+    border: 1px solid black;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+/* icons */
+td i {
+    margin: 0 10px ;
+}
+
+.red:hover {
+    color: red;
+}
+
