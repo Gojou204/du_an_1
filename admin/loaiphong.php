@@ -13,6 +13,7 @@
         <div class="main_content">
             <table>
                 <tr>
+                    <th>Khách sạn</th>
                     <th>Tên loại phòng</th>
                     <th>Hình</th>
                     <th>Mô tả</th>
@@ -22,6 +23,7 @@
                 </tr>
 
                 <tr>
+                    <td>Hoàn Kiếm Hotel</td>
                     <td>Luxury room</td>
                     <td>
                         <img src="" alt="">
@@ -42,6 +44,7 @@
                 </tr>
 
                 <tr>
+                    <td>Hoàn Kiếm Hotel</td>
                     <td>Suite room</td>
                     <td>
                         <img src="" alt="">
