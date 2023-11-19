@@ -19,5 +19,4 @@
                 <!-- End Logo -->
             </div>
         </header>
-        <!-- End Header --> 
-    
+        <!-- End Header -->
