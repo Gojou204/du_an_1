@@ -47,10 +47,10 @@
                 break;
 
             case 'updateks':
-                include "dskhachsan/update_ks.php";
+                include "khachsan/update_khachsan.php";
                 break;
             case 'updatephong':
-                include "dsloaiphong/update_phong.php";
+                include "loaiphong/update_loaiphong.php";
                 break;
 
             default:
