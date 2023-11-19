@@ -43,7 +43,7 @@
                             <td>'.$about.'</td>
                             <td style="text-align: center">'.$views.'</td>
                             <td>
-                                <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="?act=updateks"><i class="fa-solid fa-pencil"></i></a>
 
                                 <a onclick="return confirm(\'Bạn chắc chắn muốn xóa bản ghi này?\');"  href="index.php?act=xoa_khachsan?id_hotel='.$id_hotel.'">
                                     <i class="fa-solid fa-trash red"></i>

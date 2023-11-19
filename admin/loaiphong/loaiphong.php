@@ -36,7 +36,7 @@
                                 <td style="max-width: 300px">'.$about.'</td>
                                 <td style="text-align: center">'.$bed_name.'</td>
                                 <td>
-                                    <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                                    <a href="?act=updatephong"><i class="fa-solid fa-pencil"></i></a>
                                     <a href="#"><i class="fa-solid fa-trash red"></i></a>
                                 </td>
                             </tr>';
