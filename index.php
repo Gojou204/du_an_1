@@ -5,9 +5,12 @@
         $act = $_GET['act'];
 
         switch ($act) {
+            case 'about':
+                include "view/about.php";
+                break;
             case 'luxury_room' :
                 include "view/chitiet_phong/luxury.php";
-                break;
+                break;         
         }
         
     }

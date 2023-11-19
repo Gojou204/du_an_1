@@ -8,7 +8,7 @@
         <div class="add">
             <button type="button"><a href="#">Thêm mới</a></button>
         </div>
-    </div>
+    </div> <br>
 
     <div class="main_content">
         <table>
@@ -30,7 +30,7 @@
                 <td>Nơi có vô vàn dịch vụ tiêu chuẩn khách sạn 5 sao tại Đà Lạt</td>
                 <td>500</td>
                 <td>
-                    <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="?act=updateks"><i class="fa-solid fa-pencil"></i></a>
                     <a href="#"><i class="fa-solid fa-trash red"></i></a>
                 </td>
             </tr>

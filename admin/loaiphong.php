@@ -2,20 +2,20 @@
     <main>
         <div class="top_main">
             <div class="title">
-                <h1>DANH SÁCH PHÒNG</h1>
+                <h1>DANH SÁCH PHÒNG</h1> 
             </div>
 
             <div class="add">
                 <button type="button"><a href="#">Thêm mới</a></button>
             </div>
-        </div>
+        </div> <br>
 
         <div class="main_content">
             <table>
                 <tr>
                     <th>Khách sạn</th>
                     <th>Tên loại phòng</th>
-                    <th>Hình</th>
+                    <th>Hình ảnh</th>
                     <th>Mô tả</th>
                     <th>Loại giường</th>
                     <th>Tiện ích</th>
@@ -38,7 +38,7 @@
                         </ul>
                     </td>
                     <td>
-                        <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                        <a href="?act=updatephong"><i class="fa-solid fa-pencil"></i></a>
                         <a href="#"><i class="fa-solid fa-trash red"></i></a>
                     </td>
                 </tr>

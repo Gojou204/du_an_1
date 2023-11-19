@@ -14,6 +14,13 @@
                 include "loaiphong.php";
                 break;
 
+            case 'updateks':
+                include "dskhachsan/update_ks.php";
+                break;
+            case 'updatephong':
+                include "dsloaiphong/update_phong.php";
+                break;
+
             default:
                 echo "<h1>ĐƯỜNG DẪN KHÔNG XÁC ĐỊNH!</h1>
                 <a href='index.php' style='color: blue'>Quay lại trang chủ</a>";

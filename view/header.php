@@ -35,12 +35,12 @@
 
 <body>
 	<!-- Preloader start -->
-	<div class="theme-loader">
+	<!-- <div class="theme-loader">
 		<div class="spinner">
 			<div class="double-bounce1"></div>
 			<div class="double-bounce2"></div>
 		</div>
-	</div>
+	</div> -->
 	<!-- Preloader end -->
 	<!-- Header Area Start -->
 	<div class="header__sticky">
@@ -56,14 +56,14 @@
 					<div class="header__area-menubar-right">
 						<div class="header__area-menubar-right-menu menu-responsive">						
 							<ul id="mobilemenu">
-								<li><a href="index.html">Trang chủ</a>
+								<li><a href="index.php">Trang chủ</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="index.html">Home 01</a></li>
 										<li><a href="index-2.html">Home 02</a></li>
 										<li><a href="index-3.html">Home 03</a></li>									
 									</ul> -->
 								</li>
-								<li><a href="about.html">Giới thiệu</a>
+								<li><a href="?act=about">Giới thiệu</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="about.html">About</a></li>
 										<li><a href="services-team.html">Team</a></li>
