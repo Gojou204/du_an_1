@@ -43,12 +43,6 @@
         $result = pdo_query($sql);
         return $result;
     }
-    // function delete_hotel($id) {
-    //     $conn = connectdb();
-    //     $sql = "DELETE FROM `hotel` WHERE `id_hotel` = $id";
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt -> execute();
-    // }
 
     // Update khách sạn
     function update_hotel($id_hotel,$name,$img,$address,$about,$views) {
@@ -60,7 +54,7 @@
         pdo_execute($sql);
     }
 
-    // Xóa khách sạn
+    // Xóa khách sạn (Đưa vào thùng rác)
     function delete_hotel($id_hotel) {
         $sql = "UPDATE `hotel` SET `trangthai` = 1 WHERE `hotel`.`id_hotel` = $id_hotel";
         pdo_execute($sql);

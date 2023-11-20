@@ -32,7 +32,7 @@
 
                     // Dùng $xoa lỗi url %27.số id.27% ????
                     $suaks = "index.php?act=suaks&id_hotel=".$id_hotel;
-                    $xoaks = "index.php?act=xoaks?id_hotel=".$id_hotel;
+                    $xoaks = "index.php?act=xoaks&id_hotel=".$id_hotel;
                 
                     echo '<tr>
                             <td>'.$name.'</td>
