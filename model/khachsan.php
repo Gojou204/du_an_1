@@ -2,27 +2,14 @@
     // Lấy tất cả các khách sạn
     function getAll_hotel() {
         $sql = "SELECT * FROM `hotel` WHERE trangthai = 0";
-        $stmt = $conn->prepare($sql);
-        
-        // Hàm thực thi câu lệnh SQL
-        $stmt->execute();
-
-        // Dữ liệu trả về dạng mảng
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        $listkhachsan = pdo_query($sql);
+        return $listkhachsan;
     }
 
     // Lấy 1 khách sạn
     function getOne_hotel($id_hotel) {
-        $conn = connectdb();
         $sql = "SELECT * FROM `hotel` WHERE id_hotel = '$id_hotel'";
-        $stmt = $conn->prepare($sql);
-        
-        // Hàm thực thi câu lệnh SQL
-        $stmt->execute();
-
-        // Dữ liệu trả về dạng mảng
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = pdo_query_one($sql);
         return $result;
     }
 
@@ -44,26 +31,16 @@
 
     // Lấy tất cả các thành phố
     function getAll_city() {
-        $conn = connectdb();
         $sql = "SELECT * FROM `city`";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        $listcity = pdo_query($sql);
+        return $listcity;
     }
 
     // Lấy tất cả các phòng của 1 khách sạn
-    function getAll_a_Hotel() {
-        $conn = connectdb();
+    function getRoom_a_Hotel() {
         $sql = "SELECT * FROM `categories_room` WHERE `id_hotel` = 3";
-        $stmt = $conn->prepare($sql);
         
-        // Hàm thực thi câu lệnh SQL
-        $stmt->execute();
-
-        // Dữ liệu trả về dạng mảng
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = pdo_query($sql);
         return $result;
     }
     // function delete_hotel($id) {
@@ -75,23 +52,17 @@
 
     // Update khách sạn
     function update_hotel($id_hotel,$name,$img,$address,$about,$views) {
-        $conn = connectdb();
         if($img!=""){
             $sql = "UPDATE `hotel` SET `name`='{$name}', `img`='{$img}', `address`='{$address}', `about`='{$about}', `views`='{$views}', `id_hotel`='{$id_hotel}' WHERE `hotel`.`id_hotel`=$id_hotel";
         }else{
             $sql = "UPDATE `hotel` SET `name`='{$name}', `img`='{$img}', `address`='{$address}', `about`='{$about}', `views`='{$views}', `id_hotel`='{$id_hotel}' WHERE `hotel`.`id_hotel`=$id_hotel";
         }
-        $stmt = $conn->prepare($sql);
-        
-        // Hàm thực thi câu lệnh SQL
-        $stmt->execute();
+        pdo_execute($sql);
     }
 
     // Xóa khách sạn
     function delete_hotel($id_hotel) {
-        $conn = connectdb();
         $sql = "UPDATE `hotel` SET `trangthai` = 1 WHERE `hotel`.`id_hotel` = $id_hotel";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        pdo_execute($sql);
     }
 ?>
