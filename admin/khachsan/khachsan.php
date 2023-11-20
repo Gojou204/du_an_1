@@ -3,8 +3,7 @@
     <div class="top_main">
         <div class="title">
             <h1>DANH SÁCH KHÁCH SẠN</h1>
-        </div>
-
+        </div><br>
         <div class="add">
             <?php
                 // Tạo đường dẫn thêm bản ghi khách sạn mới
@@ -25,14 +24,15 @@
                 <th>Tools</th>
             </tr>
 
-            <?php foreach($list_hotel as $ht) : ?>
+            <?php foreach($list_hotel as $hotel) : ?>
                 <?php 
                     // hàm extract giúp chuyển đổi các trường dữ liệu có trong bảng thành các biến có tên của trường dữ liệu
-                    extract($ht);
+                    extract($hotel);
                     $hinh = "../".$img_path.$img;
 
                     // Dùng $xoa lỗi url %27.số id.27% ????
-                    $xoa = "index.php?act=delete?id_hotel='.$id_hotel.'";
+                    $suaks = "index.php?act=suaks&id_hotel=".$id_hotel;
+                    $xoaks = "index.php?act=xoaks?id_hotel=".$id_hotel;
                 
                     echo '<tr>
                             <td>'.$name.'</td>
@@ -43,9 +43,9 @@
                             <td>'.$about.'</td>
                             <td style="text-align: center">'.$views.'</td>
                             <td>
-                                <a href="?act=updateks"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="'.$suaks.'"><i class="fa-solid fa-pencil"></i></a>
 
-                                <a onclick="return confirm(\'Bạn chắc chắn muốn xóa bản ghi này?\');"  href="index.php?act=xoa_khachsan?id_hotel='.$id_hotel.'">
+                                <a onclick="return confirm(\'Bạn chắc chắn muốn xóa bản ghi này?\');"  href="'.$xoaks.'">
                                     <i class="fa-solid fa-trash red"></i>
                                 </a>
                             </td>
@@ -53,6 +53,7 @@
                 ?>      
             <?php endforeach ?>
         </table>
+        
     </div>
 </main>
 <!-- End Content -->
