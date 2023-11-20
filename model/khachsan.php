@@ -1,7 +1,6 @@
 <?php
     // Lấy tất cả các khách sạn
     function getAll_hotel() {
-        $conn = connectdb();
         $sql = "SELECT * FROM `hotel` WHERE trangthai = 0";
         $stmt = $conn->prepare($sql);
         
