@@ -28,12 +28,13 @@
                 <?php 
                     // hàm extract giúp chuyển đổi các trường dữ liệu có trong bảng thành các biến có tên của trường dữ liệu
                     extract($hotel);
+                    
                     $hinh = "../".$img_path.$img;
 
                     // Dùng $xoa lỗi url %27.số id.27% ????
                     $suaks = "index.php?act=suaks&id_hotel=".$id_hotel;
                     $xoaks = "index.php?act=xoaks&id_hotel=".$id_hotel;
-                
+                    $list = "index.php?act=loaiphong&id_hotel=".$id_hotel;
                     echo '<tr>
                             <td>'.$name.'</td>
                             <td>
@@ -44,7 +45,7 @@
                             <td style="text-align: center">'.$views.'</td>
                             <td>
                                 <a href="'.$suaks.'"><i class="fa-solid fa-pencil"></i></a>
-
+                                <a href="'.$list.'"><i class="fa-solid fa-list"></i></a>
                                 <a onclick="return confirm(\'Bạn chắc chắn muốn xóa bản ghi này?\');"  href="'.$xoaks.'">
                                     <i class="fa-solid fa-trash red"></i>
                                 </a>

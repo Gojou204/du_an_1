@@ -22,9 +22,9 @@
                     <th>Tools</th>
                 </tr>
 
-                <?php foreach($list_a_room as $lr) : ?>
+                <?php foreach($list_room as $room) : ?>
                     <?php 
-                        extract($lr);
+                        extract($room);
 
                         $suaphong = "index.php?act=suaphong&id_room=".$id_room;
                         $xoaphong = "index.php?act=xoa_loaiphong&id_room=".$id_room;

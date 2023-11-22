@@ -32,16 +32,8 @@
     // Lấy tất cả các thành phố
     function getAll_city() {
         $sql = "SELECT * FROM `city`";
-        $listcity = pdo_query($sql);
+        $listcity = pdo_query_one($sql);
         return $listcity;
-    }
-
-    // Lấy tất cả các phòng của 1 khách sạn
-    function getRoom_a_Hotel() {
-        $sql = "SELECT * FROM `categories_room` WHERE `id_hotel` = 3";
-        
-        $result = pdo_query($sql);
-        return $result;
     }
 
     // Update khách sạn
