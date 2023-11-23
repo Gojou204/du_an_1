@@ -8,6 +8,13 @@
         return $listphong;
     }
 
+    // Thêm phòng ksan
+    function add_room($hotel, $name, $img, $price, $about, $bed) {
+        $sql = "INSERT INTO `categories_room` (`id_hotel`, `name`, `img`, `price`, `about`, `id_bed`) 
+        VALUES ('$hotel', '$name', '$img', '$price', '$about', '$bed');";
+        pdo_execute($sql);
+    }
+
     // Lấy tất cả các phòng của 1 khách sạn
     function getRoom_a_Hotel($id_hotel) {
         // $sql = "SELECT * FROM `categories_room` WHERE `id_hotel` = 3";
