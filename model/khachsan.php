@@ -14,25 +14,16 @@
     }
 
     // Thêm 1 bản ghi khách sạn
-    function add_hotel() {
-        $name = $_POST["name"];
-        $address = $_POST["address"];
-        $about = $_POST['about'];
-        $views = $_POST['views'];
-        $id_city = $_POST['id_city'];
-
-        $img = $_FILES['tmp_name'];
-        $conn = connectdb();
-        $sql = "INSERT INTO `hotel` (`name`, `img`, `address`, `about`, `views`, `id_city`)
+    function add_hotel($name, $img, $address, $about, $views, $id_city) {
+        $sql = "INSERT INTO `hotel` (`name`, `img`, `address`, `about`, `views`, `id_city`) 
         VALUES ('$name', '$img', '$address', '$about', '$views', '$id_city');";
-        // use exec() because no results are returned
-        $conn->exec($sql);
+        pdo_execute($sql);
     }
 
     // Lấy tất cả các thành phố
     function getAll_city() {
         $sql = "SELECT * FROM `city`";
-        $listcity = pdo_query_one($sql);
+        $listcity = pdo_query($sql);
         return $listcity;
     }
 

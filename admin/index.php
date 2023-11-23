@@ -23,7 +23,22 @@
                 break;
 
             case 'add_khachsan' :
-                $list_city = getAll_city();    
+                if($_SERVER['REQUEST_METHOD'] == "POST") {
+                    $name = $_POST['name'];
+                    $address = $_POST['address'];
+                    $about = $_POST['about'];
+                    $views = $_POST['views'];
+                    $id_city = $_POST['city'];
+
+                    $img = $_FILES['img']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir.basename($_FILES['img']['name']);
+                    move_uploaded_file($_FILES['img']['tmp_name'], $target_file);
+                    // echo $name;
+
+                    add_hotel($name, $img, $address, $about, $views, $id_city);
+                }
+                $list_city = getAll_city();   
                 include "khachsan/add_khachsan.php";          
                 break;
 
@@ -83,7 +98,26 @@
                 break;
 
             case 'add_loaiphong' :
-                
+                if($_SERVER['REQUEST_METHOD'] == "POST") {
+                    $hotel = $_POST['hotel'];
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $about = $_POST['about'];
+                    $bed = $_POST['bed'];
+                    
+                    echo $name;
+
+                    $img = $_FILES['img']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir.basename($_FILES['img']['name']);
+                    move_uploaded_file($_FILES['img']['tmp_name'], $target_file);
+                    echo $name;
+
+                    add_room($hotel, $name, $img, $price, $about, $bed);
+                }
+                $list_hotel = getAll_hotel();
+                $list_bed = getAll_bed();
+                include "loaiphong/add_loaiphong.php";
                 break;
 
             case 'chitietphong':
