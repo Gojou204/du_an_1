@@ -31,6 +31,8 @@
 	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="assets/sass/style.css"> 
+	<!-- Css bổ sung thêm -->
+	<link rel="stylesheet" href="assets/css/bosung.css">
 </head>
 
 <body>
@@ -49,7 +51,7 @@
 				<div class="header__area-menubar">
 					<div class="header__area-menubar-left">
 						<div class="header__area-menubar-left-logo">
-							<a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+							<a href="index.php"><img src="assets/img/logo.png" alt=""></a>
 							<div class="responsive-menu"></div>
 						</div>
 					</div>

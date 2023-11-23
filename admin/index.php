@@ -38,7 +38,7 @@
 
                     add_hotel($name, $img, $address, $about, $views, $id_city);
                 }
-                $list_city = getAll_city();   
+                $list_city = getAll_city();
                 include "khachsan/add_khachsan.php";          
                 break;
 

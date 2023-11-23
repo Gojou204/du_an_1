@@ -16,22 +16,29 @@
 			<div class="row">
 				<form action="#">
 					<div class="check__area">
-						<div class="check__area-item">						
-							<p>Check In<input id="date" type="date"></p>								
+						<div class="check__area-item">	
+							<div class="check__area-item-room">					
+								<p>Thành phố hoặc tên khách sạn:</p>
+								<select name="select">
+									<option value="0" selected>Điểm đến phổ biến</option>
+									<option value="1">Hà Nội</option>
+									<option value="2">Đà Nẵng</option>
+									<option value="3">TP. Hồ Chí Minh</option>
+								</select>	
+							</div>							
 						</div>
 						<div class="check__area-item">						
-							<p>Check Out<input id="date2" type="date"></p>								
+							<p>Ngày nhận phòng và trả phòng:<input id="date2" type="date"></p>								
 						</div>
 						<div class="check__area-item">						
 							<div class="check__area-item-room">
-								<p>Phòng</p>
-								<select name="select">
-									<option value="1">1 phòng</option>
-									<option value="2">2 phòng</option>
-									<option value="3">3 phòng</option>
-									<option value="4">4 phòng</option>
-									<option value="5">5 phòng</option>
-								</select>
+								<p>Số Phòng:</p>
+								<input type="number" name="" id="number_room">
+								<!-- <select name="select">
+									<option value="1">Người lớn</option>
+									<option value="2">Trẻ em</option>
+									<option value="3">Phòng</option>
+								</select> -->
 							</div>								
 						</div>
 						<div class="check__area-item button">
