@@ -16,30 +16,37 @@
 			<div class="row">
 				<form action="#">
 					<div class="check__area">
-						<div class="check__area-item">	
-							<div class="check__area-item-room">					
+						<div class="check__area-item">
 								<p>Thành phố hoặc tên khách sạn:</p>
-								<select name="select">
-									<option value="0" selected>Điểm đến phổ biến</option>
-									<option value="1">Hà Nội</option>
-									<option value="2">Đà Nẵng</option>
-									<option value="3">TP. Hồ Chí Minh</option>
-								</select>	
-							</div>							
+								<input type="text" name="listcity" id="listcity" list="city">
+								<datalist id="city">
+									<?php foreach ($list_city as $city) : ?>
+										<?php
+											extract($city);
+											echo '<option value="'.$name.'">';
+										?>
+									<?php endforeach ?>
+									<?php foreach ($list_hotel as $hotel) : ?>
+										<?php
+											extract($hotel);
+											echo '<option value="'.$hotel['name']. '">';
+										?>
+									<?php endforeach ?>
+								</datalist>
 						</div>
 						<div class="check__area-item">						
-							<p>Ngày nhận phòng và trả phòng:<input id="date2" type="date"></p>								
+							<p>Ngày nhận phòng:</p>
+							<input type="date" name="date_checkin" id="date_check"> 
 						</div>
-						<div class="check__area-item">						
-							<div class="check__area-item-room">
-								<p>Số Phòng:</p>
-								<input type="number" name="" id="number_room">
-								<!-- <select name="select">
-									<option value="1">Người lớn</option>
-									<option value="2">Trẻ em</option>
-									<option value="3">Phòng</option>
-								</select> -->
-							</div>								
+						<div class="check__area-item">		
+							<p>Ngày trả phòng:</p>
+							<input type="date" name="date_checkout" id="date_check">
+							<!-- <input type="number" name="" id="number_room"> -->
+							<!-- <select name="select">
+								<option value="1">Người lớn</option>
+								<option value="2">Trẻ em</option>
+								<option value="3">Phòng</option>
+							</select> -->					
 						</div>
 						<div class="check__area-item button">
 							<button class="theme-btn" type="submit">Kiểm tra ngay</button>							

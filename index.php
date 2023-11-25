@@ -1,4 +1,10 @@
 <?php
+    include "model/pdo.php";
+    include "model/khachsan.php";
+    include "model/loaiphong.php";
+    include "model/bed.php";
+
+    include "global.php";
     include "view/header.php";
 
     if(isset($_GET['act']) && ($_GET['act'] != "")) {
@@ -15,6 +21,8 @@
         
     }
     else {
+        $list_city = getAll_city();
+        $list_hotel = getAll_hotel();
         include "view/home.php";
     }
     

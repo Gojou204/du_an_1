@@ -44,6 +44,7 @@
         </select>
         <br>
         <button name="add">Thêm mới</button>
+        <a href="index.php?act=listphong"><input type="button" value="Quay lại trang danh sách"></a>
     </form>
 </main>
 <!-- End Content -->
