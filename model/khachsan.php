@@ -6,6 +6,13 @@
         return $listkhachsan;
     }
 
+    // Lấy tất cả các khách sạn theo id thành phố
+    function getAll_hotel_by_city($id_city) {
+        $sql = "SELECT * FROM `hotel` WHERE `id_city` = $id_city";
+        $listkhachsan = pdo_query($sql);
+        return $listkhachsan;
+    }
+
     // Lấy 1 khách sạn
     function getOne_hotel($id_hotel) {
         $sql = "SELECT * FROM `hotel` WHERE id_hotel = '$id_hotel'";
