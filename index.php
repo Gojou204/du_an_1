@@ -18,6 +18,8 @@
                 include "view/chitiet_phong/luxury.php";
                 break;   
             case 'listphong':
+                $list_city = getAll_city();
+                $hotel = getOne_hotel($_GET['id_hotel']);
                 $list_a_room = getRoom_a_Hotel($_GET['id_hotel']);
                 $list_bed = getAll_bed();
                 include "view/booking_phong/listphong_hotel.php";

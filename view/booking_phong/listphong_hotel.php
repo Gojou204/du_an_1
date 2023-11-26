@@ -5,12 +5,15 @@
 				<div class="col-xl-12">
 					<div class="page__banner-title">
 						<h1>Chi tiết khách sạn</h1>
-						<div class="page__banner-title-menu">
+						<?php
+							
+							extract($hotel);
+							echo'<div class="page__banner-title-menu">
 							<ul>
-								<li><a href="index.html">Thành phố</a></li>
-								<li><span>-</span>Chi tiết khách sạn</li>
+								<li>'.$name.'</li>
 							</ul>
-						</div>
+							</div>';
+						?>
 					</div>
 				</div>
 			</div>
@@ -89,30 +92,28 @@
 				</div>
 				<div class="col-xl-9 col-lg-8">
 					<div class="room__details-right">
-						<div class="room__details-right-content">
-							<h2 class="mb-25">Tên khách sạn</h2>
-                            <p><i class="fa-sharp fa-solid fa-location-dot"></i>&ensp; Địa chỉ:</p>
-							<div class="row mt-35 mb-35">
-								<div class="col-sm-6 sm-mb-30">
-									<img class="img__full" src="assets/img/hotel/hotel-24.jpg" alt="">
+						<?php 
+								extract($hotel);
+								echo'<div class="room__details-right-content">
+								<h2 class="mb-25">'.$name.'</h2>
+								<p><i class="fa-sharp fa-solid fa-location-dot"></i>&ensp;'.$address.'</p>
+								<div class="row mt-35 mb-35">
+									<div class="col-sm-6 sm-mb-30">
+										<img class="img__full" src="'.$img_path.$img.'" alt="">
+									</div>
+									<div class="col-sm-6">
+										
+									</div>
 								</div>
-								<div class="col-sm-6">
-									<img class="img__full" src="assets/img/hotel/hotel-25.jpg" alt="">
+								<div>
+									<h4 class="mb-25">Giới thiệu khách sạn</h4>
+									<p class="mb-25">'.$about.'</p>									
 								</div>
-							</div>
-							<h3 class="mb-25">Hướng dẫn đặc biệt khi làm thủ tục nhận phòng</h3>
-							<p class="mb-25">Khi bước vào lễ tân, hãy đảm bảo rằng bạn đã chuẩn bị đầy đủ thông tin cần
-								thiết, bao gồm hộ chiếu hoặc giấy tờ tùy thân và thông tin đặt phòng của bạn. Điều này
-								giúp quá trình check-in diễn ra nhanh chóng hơn.</p>
-							<p class="m-0">Quá trình nhận phòng không chỉ là bước khởi đầu cho chuyến đi của bạn mà còn
-								là cơ hội để bạn tận hưởng mọi dịch vụ và tiện ích mà khách sạn có để cung cấp.</p>
-						</div>
+								</div>
+								<h3>Danh sách loại phòng tại '.$name.'</h3>';
+						?><br><br>
                         <!-- Danh sách loại phòng khách sạn -->
 						<div>
-						<?php foreach($list_bed as $bed){
-							extract($bed);
-							$bed['name'] = $name;
-						}?>
                             <?php foreach($list_a_room as $lr){
                                 extract($lr);
                                     echo'<div class="room__list-item">
@@ -125,7 +126,7 @@
                                         <div class="room__list-item-right-content">
                                             <h4>'.$name.'</h4>
                                             <ul>
-                                                <li><i class="fal fa-bed-alt"></i>'.$id_bed.'</li>
+                                                <li><i class="fal fa-bed-alt"></i>'.$bed_name.'</li>
                                                 <li><i class="fal fa-users"></i>Khách</li>
                                             </ul><hr>
                                             <p>'.$about.'</p>
