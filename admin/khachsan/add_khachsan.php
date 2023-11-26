@@ -33,8 +33,9 @@
                     echo '<option value="'.$id_city.'">'.$name.'</option>';
                 ?>
             <?php endforeach ?>
-        </select>
+        </select><br>
         <button name="add">Thêm mới</button>
+        <a href="index.php?act=khachsan"><input type="button" value="Quay lại trang danh sách"></a>
     </form>
 </main>
 <!-- End Content -->

@@ -1,0 +1,27 @@
+#number_room{
+    height: 30px;
+    width:225px;
+    background-color: #333334;
+    border-color: black;
+    color: #B89146;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: bold;
+}
+#date_check{
+    height: 30px;
+    width:225px;
+    background-color: #333334;
+    border-color: black;
+    color: #B89146;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: bold;
+}
+#listcity{
+    height: 30px;
+    width:225px;
+    background-color: #333334;
+    border-color: black;
+    color: #B89146;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: bold;
+}

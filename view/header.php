@@ -31,6 +31,10 @@
 	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="assets/sass/style.css"> 
+	<!-- Css bổ sung thêm -->
+	<link rel="stylesheet" href="assets/css/bosung.css">
+	<!-- Icons -->
+	<script src="https://kit.fontawesome.com/7d1c352b9d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,7 +53,7 @@
 				<div class="header__area-menubar">
 					<div class="header__area-menubar-left">
 						<div class="header__area-menubar-left-logo">
-							<a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+							<a href="index.php"><img src="assets/img/logo.png" alt=""></a>
 							<div class="responsive-menu"></div>
 						</div>
 					</div>
@@ -76,7 +80,7 @@
 										<!-- <li><a href="room-style.html">Room Style</a></li>
 										<li><a href="room-modern.html">Room Modern</a></li> -->
 										<li><a href="room-list.html">Room List</a></li>
-										<li><a href="room-details.html">Room Details</a></li>
+										<li><a href="?act=listphong">Room Details</a></li>
 									</ul>
 								</li>
 								<li><a href="blog-standard.html">Blog</a>

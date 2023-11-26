@@ -3,8 +3,8 @@
     include "model/khachsan.php";
     include "model/loaiphong.php";
     include "model/bed.php";
-    include "global.php";
 
+    include "global.php";
     include "view/header.php";
 
     if(isset($_GET['act']) && ($_GET['act'] != "")) {
@@ -45,10 +45,20 @@
                     $list_city = getAll_city();
                     include "view/khachsan/list_hotel_by_city.php";
                     break;
+                break;   
+            case 'listphong':
+                $list_city = getAll_city();
+                $hotel = getOne_hotel($_GET['id_hotel']);
+                $list_a_room = getRoom_a_Hotel($_GET['id_hotel']);
+                $list_bed = getAll_bed();
+                include "view/booking_phong/listphong_hotel.php";
+                break;      
         }
         
     }
     else {
+        $list_city = getAll_city();
+        $list_hotel = getAll_hotel();
         include "view/home.php";
     }
     

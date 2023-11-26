@@ -6,7 +6,7 @@
             </div>
 
             <div class="add">
-                <button type="button"><a href="#">Thêm mới</a></button>
+                <button type="button"><a href="index.php?act=add_loaiphong">Thêm mới</a></button>
             </div>
         </div>
 
