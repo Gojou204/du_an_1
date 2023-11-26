@@ -33,6 +33,8 @@
 	<link rel="stylesheet" href="assets/sass/style.css"> 
 	<!-- Css bổ sung thêm -->
 	<link rel="stylesheet" href="assets/css/bosung.css">
+	<!-- Icons -->
+	<script src="https://kit.fontawesome.com/7d1c352b9d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -78,7 +80,7 @@
 										<!-- <li><a href="room-style.html">Room Style</a></li>
 										<li><a href="room-modern.html">Room Modern</a></li> -->
 										<li><a href="room-list.html">Room List</a></li>
-										<li><a href="room-details.html">Room Details</a></li>
+										<li><a href="?act=listphong">Room Details</a></li>
 									</ul>
 								</li>
 								<li><a href="blog-standard.html">Blog</a>
