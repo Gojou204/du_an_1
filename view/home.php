@@ -14,33 +14,27 @@
 				</div>
 			</div>
 			<div class="row">
-				<form action="#">
+				<form action="index.php?act=list_hotel" method="GET" enctype="multipart/form-data">
 					<div class="check__area">
 						<div class="check__area-item">
-								<p>Thành phố hoặc tên khách sạn:</p>
-								<input type="text" name="listcity" id="listcity" list="city">
+								<p>Tỉnh, thành phố hoặc địa điểm:</p>
+								<input type="text" id="listcity" list="city">
 								<datalist id="city">
 									<?php foreach ($list_city as $city) : ?>
 										<?php
 											extract($city);
-											echo '<option value="'.$name.'">';
-										?>
-									<?php endforeach ?>
-									<?php foreach ($list_hotel as $hotel) : ?>
-										<?php
-											extract($hotel);
-											echo '<option value="'.$hotel['name']. '">';
+											echo '<option value="'.$name.'"></option>';
 										?>
 									<?php endforeach ?>
 								</datalist>
 						</div>
 						<div class="check__area-item">						
 							<p>Ngày nhận phòng:</p>
-							<input type="date" name="date_checkin" id="date_check"> 
+							<input type="date" name="" id="date_check"> 
 						</div>
 						<div class="check__area-item">		
 							<p>Ngày trả phòng:</p>
-							<input type="date" name="date_checkout" id="date_check">
+							<input type="date" name="" id="date_check">
 							<!-- <input type="number" name="" id="number_room"> -->
 							<!-- <select name="select">
 								<option value="1">Người lớn</option>
@@ -48,9 +42,9 @@
 								<option value="3">Phòng</option>
 							</select> -->					
 						</div>
-						<div class="check__area-item button">
-							<button class="theme-btn" type="submit">Kiểm tra ngay</button>							
-						</div>
+							<div class="check__area-item button">
+								<button class="theme-btn" type="submit" name="check">Kiểm tra ngay</button>							
+							</div>
 					</div>
 				</form>
 			</div>
