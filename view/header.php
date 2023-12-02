@@ -34,7 +34,7 @@
 	<!-- Css bổ sung thêm -->
 	<link rel="stylesheet" href="assets/css/bosung.css">
 	<!-- Icons -->
-	<script src="https://kit.fontawesome.com/7d1c352b9d.js" crossorigin="anonymous"></script>
+	<!-- <script src="https://kit.fontawesome.com/7d1c352b9d.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -75,12 +75,12 @@
 										<li><a href="coming-soon.html">Coming Soon</a></li>
 									</ul> -->
 								</li>
-								<li><a href="room-list.html">Phòng</a>
+								<li><a href="index.php?act=list_hotel_by_city&id_city=1">Khách sạn</a>
 									<ul class="sub-menu">
 										<!-- <li><a href="room-style.html">Room Style</a></li>
 										<li><a href="room-modern.html">Room Modern</a></li> -->
-										<li><a href="room-list.html">Room List</a></li>
-										<li><a href="?act=listphong">Room Details</a></li>
+										<!-- <li><a href="room-list.html">Room List</a></li>
+										<li><a href="index.php?act=listphong&id_hotel=1#">Room Details</a></li> -->
 									</ul>
 								</li>
 								<li><a href="blog-standard.html">Blog</a>

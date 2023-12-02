@@ -52,7 +52,21 @@
                 $list_a_room = getRoom_a_Hotel($_GET['id_hotel']);
                 $list_bed = getAll_bed();
                 include "view/booking_phong/listphong_hotel.php";
-                break;      
+                break;  
+                
+            case 'datphong':
+                if(isset($_GET['id_room']) && ($_GET['id_room'])) {
+                    $id_room = $_GET['id_room'];
+
+                    $room = getOne_room($_GET['id_room']);
+                    $list_bed = getAll_bed();
+                }
+                include "view/booking_phong/datphong.php";
+                break;
+
+            case 'thanhtoan':
+
+                break;
         }
         
     }
