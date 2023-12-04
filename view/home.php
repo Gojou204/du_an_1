@@ -14,18 +14,19 @@
 				</div>
 			</div>
 			<div class="row">
-				<form action="index.php?act=list_hotel" method="GET" enctype="multipart/form-data">
+				<form action="index.php?act=list_hotel" method="POST" enctype="multipart/form-data">
 					<div class="check__area">
 						<div class="check__area-item">
 								<p>Tỉnh, thành phố hoặc địa điểm:</p>
-								<input type="text" id="listcity" list="city">
+								<input type="text" name="keyw" id="listcity" list="city">
 								<datalist id="city">
-									<?php foreach ($list_city as $city) : ?>
-										<?php
+									<?php foreach ($list_city as $city) { 
+										
 											extract($city);
-											echo '<option value="'.$name.'"></option>';
-										?>
-									<?php endforeach ?>
+											echo '<option value="'.$id_city.'">'.$name.'</option>';
+										
+									}?>
+									
 								</datalist>
 						</div>
 						<div class="check__area-item">						
@@ -42,9 +43,12 @@
 								<option value="3">Phòng</option>
 							</select> -->					
 						</div>
+						
 							<div class="check__area-item button">
-								<button class="theme-btn" type="submit" name="check">Kiểm tra ngay</button>							
+								<button class="theme-btn" type="submit" name="check">Kiểm tra ngay</button>				
 							</div>
+						
+							
 					</div>
 				</form>
 			</div>

@@ -58,7 +58,7 @@
                                     <div class="room__list-item-right">
                                         <div class="room__list-item-right-content">
                                             <a href="'.$listphong.'"><h4><b>'.$name.'</b></h4></a>
-                                            <p>'.$about.'</p>
+                                            
                                             <ul>
                                                 <li><i class="fal fa-location"></i>'.$address.'</li>   
 												<li><p>Lượt xem: '.$views.'</p></li>                                 

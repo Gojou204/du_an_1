@@ -10,15 +10,16 @@
 
                         <div class="blog__details-left-box">
                             <h4>Thông tin liên hệ</h4><br>
-                            <form action="">
-                                <label for="">Họ và tên</label>
-                                <input type="text">
-                                <label for="">Số điện thoại</label>
-                                <input type="number">
-                                <label for="">Email</label>
-                                <input type="email"><br><br>
-                                    <a href="index.php?act=about"><input type="button" value="Tiếp tục"></a>
-                            </form>
+                            
+                                <form action="index.php?act=thanhtoan" method="POST">
+                                    <label for="">Họ và tên</label>
+                                    <input type="text">
+                                    <label for="">Số điện thoại</label>
+                                    <input type="number">
+                                    <label for="">Email</label>
+                                    <input type="email"><br><br>
+                                    <button type="submit" name="payUrl">Tiếp tục</button>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -39,7 +40,7 @@
                                 <h5>'.$hotel_name.'</h5>
                                 <span>Ngày nhận phòng: <input type="date" name=""> </span><br>
                                 <span>Ngày trả phòng: <input type="date" name=""> </span><br><hr>
-                                <h6>Loại phòng:&emsp; '.$name.'</h6>Số phòng đặt<input type="number" min="1" max="5" value="1">
+                                <h6>Loại phòng: '.$name.'</h6>Số phòng đặt<input type="number" min="1" max="5" value="1">
                                 <br>
                                 <span>Kiểu giường &emsp; &emsp; <b>'.$bed_name.'</b></span><br><br>
                                 <img src="upload/hero.jpg" alt="" width="80px"><br><br>

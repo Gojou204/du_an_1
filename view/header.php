@@ -75,7 +75,7 @@
 										<li><a href="coming-soon.html">Coming Soon</a></li>
 									</ul> -->
 								</li>
-								<li><a href="index.php?act=list_hotel_by_city&id_city=1">Khách sạn</a>
+								<li><a href="index.php?act=list_hotel">Khách sạn</a>
 									<ul class="sub-menu">
 										<!-- <li><a href="room-style.html">Room Style</a></li>
 										<li><a href="room-modern.html">Room Modern</a></li> -->
@@ -83,14 +83,14 @@
 										<li><a href="index.php?act=listphong&id_hotel=1#">Room Details</a></li> -->
 									</ul>
 								</li>
-								<li><a href="blog-standard.html">Blog</a>
+								<li><a href="#">Blog</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="blog-grid.html">Blog Grid</a></li>
 										<li><a href="blog-standard.html">Blog Standard</a></li>
 										<li><a href="blog-details.html">Blog Details</a></li>
 									</ul> -->
 								</li>
-								<li><a href="contact.html">Tài khoản</a>
+								<li><a href="#">Tài khoản</a>
 									<ul class="sub-menu">
 										<li><a href="#">Đăng nhập</a></li>
 										<li><a href="#">Đăng ký</a></li>
@@ -102,7 +102,7 @@
 					</div>
 					<div class="header__area-menubar-right-box">
 						<div class="header__area-menubar-right-box-btn">
-							<a class="theme-btn" href="contact.html">Đặt phòng<i class="fal fa-long-arrow-right"></i></a>
+							<a class="theme-btn" href="index.php?act=list_hotel">Đặt phòng<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
