@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+    <div class="grid">
+        <!-- Content -->
+        <main>
+            <div class="top_main">
+                <div class="title">
+                    <h1>THÊM MỚI KHÁCH SẠN</h1>
+                </div>
+    
+                <div class="add">
+                    <a href="index.php?act=khachsan" style="color: blue; text-decoration: underline;">Quay lại trang danh sách</a>
+                </div>
+            </div>
+    
+            <div class="main_content">
+                <form action="index.php?act=add_khachsan" method="POST" enctype="multipart/form-data">
+                    <div class="form_padding">
+                        <div class="form_group">
+                            <div class="form_title">
+                                <label for="">Nhập tên khách sạn</label>
+                            </div>
+                
+                            <div class="form_ctrl">
+                                <input type="text" name="name" value="" placeholder="">
+                            </div>
+                        </div>
+                
+                        <div class="form_group">
+                            <div class="form_ctrl">
+                                <input type="file" name="img" value="" placeholder="">
+                            </div>
+                        </div>
+                        
+                        <div class="form_group">
+                            <div class="form_title">
+                                <label for="">Nhập địa chỉ khách sạn</label>
+                            </div>
+                
+                            <div class="form_ctrl">
+                                <input type="text" name="address" value="" placeholder="Nhập địa chỉ khách sạn">
+                            </div>
+                        </div>                    
+                        
+                        <div class="form_group">
+                            <div class="form_title">
+                                <label for="">Nhập mô tả</label>
+                            </div>
+
+                            <div class="form_ctrl">
+                                <textarea textarea name="about" id="" cols="30" rows="10" placeholder="Mô tả"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form_row">
+                            <div class="form_row_child">
+                                <div class="form_title">
+                                    <label for="">Nhập lượt xem</label>
+                                </div>
+                    
+                                <div class="form_ctrl">
+                                    <input type="number" name="views" value="" placeholder="">
+                                </div>
+                            </div>
+                            
+                            <div class="form_row_child">
+                                <div class="form_title">
+                                    <label for="">Chọn thành phố</label>
+                                </div>
+                                <div class="form_ctrl">
+                                    <select name="" id="">
+                                        <option value="0">--Tất cả--</option>
+                                        <option value="1">HCM</option>
+                                        <option value="2">HN</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="btn_group">
+                            <div class="btn_ctrl">
+                                <button type="submit" name="add">Thêm mới</button>
+                            </div>
+
+                            <div class="btn_ctrl">
+                                <button type="reset" name="add">Nhập lại</button>
+                            </div>
+
+                            <!-- <div class="btn_ctrl">
+                                <a href="index.php?act=khachsan"><input type="button" value="Quay lại trang danh sách"></a>
+                            </div>                             -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </main>
+        <!-- End Content -->
+    </div>
+
+</body>
+</html>
