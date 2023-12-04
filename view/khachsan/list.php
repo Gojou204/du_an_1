@@ -50,18 +50,19 @@
                     <?php foreach ($list_hotel as $hotel) : ?>
                         <?php
                             extract($hotel);
+							$listphong = "index.php?act=listphong&id_hotel=".$id_hotel;
                             $hinh = $img_path.$img;
 
                             echo '<div class="room__list-item">
                                     <div class="room__list-item-left">
-                                        <div class="room__list-item-image">
+										<a href="'.$listphong.'"><div class="room__list-item-image">
                                             <img src="'.$hinh.'" alt="" width=250px>
-                                        </div>
+                                        </div></a>
                                     </div>
                                     <div class="room__list-item-right">
                                         <div class="room__list-item-right-content">
-                                            <h4><b>'.$name.'</b></h4>
-                                            <p>'.$about.'</p>
+											<a href="'.$listphong.'"><h4><b>'.$name.'</b></h4></a>
+                                            
                                             <ul>
                                                 <li><i class="fal fa-location"></i>'.$address.'</li>   
 												<li><p>Lượt xem: '.$views.'</p></li>                                 
@@ -72,7 +73,7 @@
                                                 <!-- <span>$249/Đêm</span> -->
                                                 <p><i class="fas fa-star"></i><span>2.9</span>2k</p>
                                             </div>
-                                            <a class="simple-btn" href="#"><i class="far fa-chevron-right"></i>Read More</a>											
+                                            <a class="simple-btn" href="'.$listphong.'"><i class="far fa-chevron-right"></i>Read More</a>											
                                         </div>
                                     </div>
                                 </div>';

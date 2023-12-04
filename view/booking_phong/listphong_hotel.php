@@ -137,7 +137,7 @@
                                                 <p>/Phòng/Đêm</p>
                                                 <p><i class="fas fa-star"></i><span>4.9</span></p>
                                             </div>
-                                            <a class="simple-btn" href="#">Đặt ngay</a>
+                                            <a class="simple-btn" href="?act=datphong&id_room='.$id_room.'">Đặt ngay</a>
                                         </div>
                                     </div>
                                     </div>';

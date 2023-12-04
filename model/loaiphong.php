@@ -29,7 +29,11 @@
 
     // Lấy thông tin 1 phòng của 1 khách sạn
     function getOne_room($id_room){
-        $sql = "SELECT * FROM `categories_room` WHERE `id_room` = '$id_room'";
+        $sql = "SELECT c.*, h.name AS hotel_name, b.name AS bed_name FROM categories_room c 
+        JOIN `hotel` h ON c.id_hotel = h.id_hotel
+        JOIN `bed` b ON c.id_bed = b.id_bed
+        WHERE c.id_room = $id_room";
+        // $sql = "SELECT * FROM `categories_room` WHERE `id_room` = '$id_room'";
         $result = pdo_query_one($sql);
         return $result;
     }
