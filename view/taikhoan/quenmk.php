@@ -27,11 +27,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h2 class="login-header w3_header"></h2>
 				    <div class="w3l_grid">
                         <form class="login-container" action="index.php?act=quenmk" method="POST">
-                         <?php if(isset($loginMess)&&$loginMess != ''){
-                              echo $loginMess;
-                         } ?>
                              <input type="text" placeholder="Nhập email" Name="email" required="" >
-                             <input type="submit" value="Gửi" name="dangnhap">
+                             <input type="submit" value="Gửi" name="guiemail">
+                             <?php if(isset($sendMailMess) && $sendMailMess != ''){
+                              echo $sendMailMess;
+                              } ?>
                         </form>
 <br>
                  

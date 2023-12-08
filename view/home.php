@@ -142,6 +142,7 @@
 				?>
 					<?php 
 						extract($hotel_view);
+						$listphong = "index.php?act=listphong&id_hotel=".$id_hotel;
 						$hinh = $img_path.$img;
 
 						echo '<div class="col-xl-4 col-lg-8 lg-mb-30">
@@ -152,7 +153,7 @@
 										<div class="deluxe__area-item-content"> 
 											<h6>Lượt xem: '.$views.'</h6>
 											<h4><a href="room-details.html">'.$name.'</a></h4>
-											<a class="simple-btn" href="index.php?act=luxury_room"><i class="far fa-chevron-right"></i>Xem chi tiết khách sạn</a> 
+											<a class="simple-btn" href="'.$listphong.'"><i class="far fa-chevron-right"></i>Xem chi tiết khách sạn</a> 
 										</div>
 									</div>
 								</div>';
