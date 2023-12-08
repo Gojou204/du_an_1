@@ -90,13 +90,25 @@
 										<li><a href="blog-details.html">Blog Details</a></li>
 									</ul> -->
 								</li>
-								<li><a href="#">Tài khoản</a>
-									<ul class="sub-menu">
-										<li><a href="#">Đăng nhập</a></li>
-										<li><a href="#">Đăng ký</a></li>
-										<li><a href="#">Yêu thích</a></li>
-									</ul>
-								</li>
+								<?php if(!$_SESSION) { ?>
+									<li><a href="#">Tài khoản</a>
+										<ul class="sub-menu">
+											<li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
+											<li><a href="index.php?act=dangky">Đăng ký</a></li>
+											<li><a href="#">Yêu thích</a></li>
+										</ul>
+									</li>
+								<?php }else { ?>
+										<li><a href=""><?=$_SESSION['user']?></a>
+											<ul class="sub-menu">
+												<!-- <li><a href="index.php?act=dangnhap">Đăng nhập</a></li> -->
+												<li><a href="#">Hồ sơ</a></li>
+												<li><a href="#">Đơn đặt phòng</a></li>
+												<li><a href="#">Yêu thích</a></li>
+												<li><a href="index.php?act=dangxuat">Đăng xuất</a></li>
+											</ul>
+										</li>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>

@@ -18,16 +18,17 @@
 					<div class="check__area">
 						<div class="check__area-item">
 								<p>Tỉnh, thành phố hoặc địa điểm:</p>
-								<input type="text" name="keyw" id="listcity" list="city">
+								<input type="text" name="id_city" id="listcity" list="city">
 								<datalist id="city">
 									<?php foreach ($list_city as $city) { 
 										
 											extract($city);
-											echo '<option value="'.$id_city.'">'.$name.'</option>';
+											echo '<option value="'.$name.'"></option>';
 										
 									}?>
 									
 								</datalist>
+								
 						</div>
 						<div class="check__area-item">						
 							<p>Ngày nhận phòng:</p>
@@ -81,93 +82,87 @@
 		</div>
 	</div>
 	<!-- Accommodations Area End -->
-	<!-- Deluxe Area Start -->
+
+	<!-- Danh sách thành phố có views cao nhất-->
 	<div class="deluxe__area section-padding">
 		<div class="container">
 			<div class="row align-items-end mb-60">
 				<div class="col-xl-5">
 					<div class="deluxe__area-title">
-						<span class="subtitle__one">Danh sách phòng</span>
-						<h2>Phòng cao cấp</h2>
+						<span class="subtitle__one">Danh sách thành phố</span>
+						<h2>Top thành phố được tìm kiếm nhiều nhất</h2>
 					</div>					
 				</div>
-				<div class="col-xl-7">
-					<div class="deluxe__area-btn">
-						<ul>
-							<li class="active" data-filter="*">All Rooms</li>
-							<li data-filter=".luxury">Luxury</li>
-							<li data-filter=".single">Single</li>
-							<li data-filter=".suite">Small Suite</li>
-							<li data-filter=".family">Family</li>
-						</ul>
-					</div>
-				</div>
 			</div>
+			
 			<div class="row deluxe__area-active">
-				<div class="col-xl-3 col-lg-4 mb-30 suite">
-					<div class="deluxe__area-item"> 
-						<div class="deluxe__area-item-image">
-							<img class="img__full" src="assets/img/luxury/luxury-1.jpg" alt="">
-						</div>
-						<div class="deluxe__area-item-content"> 
-							<h6><a href="#"><span>$134</span> / Night</a></h6>
-							<h4><a href="room-details.html">Small Suite</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a> 
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-8 mb-30 suite">
-					<div class="deluxe__area-item deluxe__area-item-hover"> 
-						<div class="deluxe__area-item-image">
-							<img class="img__full" src="assets/img/luxury/luxury-2.jpg" alt="">
-						</div>
-						<div class="deluxe__area-item-content"> 
-							<h6><a href="#"><span>$199</span> / Night</a></h6>
-							<h4><a href="room-details.html">Deluxe Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a> 
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 mb-30 family">
-					<div class="deluxe__area-item"> 
-						<div class="deluxe__area-item-image">
-							<img class="img__full" src="assets/img/luxury/luxury-3.jpg" alt="">
-						</div>
-						<div class="deluxe__area-item-content"> 
-							<h6><a href="#"><span>$319</span> / Night</a></h6>
-							<h4><a href="room-details.html">Family Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a> 
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-8 lg-mb-30 single">
-					<div class="deluxe__area-item"> 
-						<div class="deluxe__area-item-image">
-							<img class="img__full" src="assets/img/luxury/luxury-4.jpg" alt="">
-						</div>
-						<div class="deluxe__area-item-content"> 
-							<h6><a href="#"><span>$169</span> / Night</a></h6>
-							<h4><a href="room-details.html">Single Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a> 
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 luxury">
-					<div class="deluxe__area-item"> 
-						<div class="deluxe__area-item-image">
-							<img class="img__full" src="assets/img/luxury/luxury-5.jpg" alt="">
-						</div>
-						<div class="deluxe__area-item-content"> 
-							<h6><a href="#"><span>$249</span> / Night</a></h6>
-							<h4><a href="room-details.html">Luxury Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a> 
-						</div>
-					</div>
-				</div>
+				<?php
+					$list_city_view = getAll_city_view();
+					foreach($list_city_view as $city_view) :
+				?>
+					<?php 
+						extract($city_view);
+						$hinh = $img_path.$img;
+
+						echo '<div class="col-xl-4 col-lg-8 lg-mb-30">
+									<div class="deluxe__area-item"> 
+										<div class="deluxe__area-item-image">
+											<img class="img__full" src="'.$hinh.'" alt="">
+										</div>
+										<div class="deluxe__area-item-content"> 
+											<h6>Lượt xem: '.$views.'</h6>
+											<h4><a href="room-details.html">'.$name.'</a></h4>
+											<a class="simple-btn" href="index.php?act=list_hotel_by_city&id_city='.$id_city.'"><i class="far fa-chevron-right"></i>Xem danh sách khách sạn</a> 
+										</div>
+									</div>
+								</div>';
+					?>				
+				<?php endforeach ?>
 			</div>
 		</div>
 	</div>
-	<!-- Deluxe Area End -->
+	<!-- Danh sách thành phố có views cao nhất End -->
+
+	<!-- Danh sách khách sạn có views cao nhất-->
+	<div class="deluxe__area section-padding">
+		<div class="container">
+			<div class="row align-items-end mb-60">
+				<div class="col-xl-5">
+					<div class="deluxe__area-title">
+						<span class="subtitle__one">Danh sách khách sạn</span>
+						<h2>Top khách sạn được tìm kiếm nhiều nhất</h2>
+					</div>					
+				</div>
+			</div>
+			
+			<div class="row deluxe__area-active">
+				<?php
+					$list_hotel_view = getAll_hotel_view();
+					foreach($list_hotel_view as $hotel_view) :
+				?>
+					<?php 
+						extract($hotel_view);
+						$hinh = $img_path.$img;
+
+						echo '<div class="col-xl-4 col-lg-8 lg-mb-30">
+									<div class="deluxe__area-item"> 
+										<div class="deluxe__area-item-image">
+											<img class="img__full" src="'.$hinh.'" alt="">
+										</div>
+										<div class="deluxe__area-item-content"> 
+											<h6>Lượt xem: '.$views.'</h6>
+											<h4><a href="room-details.html">'.$name.'</a></h4>
+											<a class="simple-btn" href="index.php?act=luxury_room"><i class="far fa-chevron-right"></i>Xem chi tiết khách sạn</a> 
+										</div>
+									</div>
+								</div>';
+					?>				
+				<?php endforeach ?>
+			</div>
+		</div>
+	</div>
+	<!-- Danh sách khách sạn có views cao nhất End -->								
+
 	<!-- Video Area Start -->
 	<div class="video__area" data-background="assets/img/video.jpg">
 		<div class="container">
@@ -188,176 +183,7 @@
 		</div>
 	</div>
 	<!-- Video Area End -->
-	<!-- Services Area Start -->
-	<div class="services__area section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 lg-mb-30">
-					<div class="services__area-item">
-						<div class="services__area-item-icon">
-							<img src="assets/img/icon/cleaning.png" alt="">
-						</div>
-						<div class="services__area-item-content">
-							<h5><a href="#">Dọn phòng</a></h5>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 sm-mb-30">
-					<div class="services__area-item">
-						<div class="services__area-item-icon">
-							<img src="assets/img/icon/wifi.png" alt="">
-						</div>
-						<div class="services__area-item-content">
-							<h5><a href="#">Wifi</a></h5>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-					<div class="services__area-item">
-						<div class="services__area-item-icon">
-							<img src="assets/img/icon/location.png" alt="">
-						</div>
-						<div class="services__area-item-content">
-							<h5><a href="#">Đưa đón</a></h5>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Services Area End -->
-	<!-- Feature Area Start -->
-	<div class="feature__area">
-		<div class="container">
-			<div class="row align-items-center bg-left mb-60">
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-image">
-						<img class="img__full" src="assets/img/features/feature-1.jpg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-left">
-						<div class="feature__area-left-title">
-							<span class="subtitle__one">Đồ ăn</span>
-							<h2>Nhà hàng cao cấp</h2>
-							<p>Nơi hội tụ của ẩm thực đặc sắc và phục vụ chuyên nghiệp, nhà hàng của chúng tôi là địa điểm lý tưởng cho cả bữa trưa công suất và dạ tiệc gia đình ấm cúng. Hãy đến và trải nghiệm không gian ẩm thực độc đáo của chúng tôi.</p>
-							<a class="theme-border-btn" href="services-details.html">Xem thêm<i class="fal fa-long-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row align-items-center bg-right mb-60">
-				<div class="col-xl-6 col-lg-6  order-last order-lg-first">
-					<div class="feature__area-left">
-						<div class="feature__area-left-title">
-							<span class="subtitle__one">Đọc sách</span>
-							<h2>Thư viện</h2>
-							<p>Khám phá thế giới tư duy tại thư viện của chúng tôi - một không gian yên bình, nơi bạn có thể ngồi thoải mái, đắm chìm trong sách, và tận hưởng không gian trí tuệ.</p>
-							<a class="theme-border-btn" href="services-details.html">Xem thêm<i class="fal fa-long-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-image">
-						<img class="img__full" src="assets/img/features/feature-2.jpg" alt="">
-					</div>
-				</div>
-			</div>
-			<div class="row align-items-center bg-left mb-60">
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-image">
-						<img class="img__full" src="assets/img/features/feature-3.jpg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-left">
-						<div class="feature__area-left-title">
-							<span class="subtitle__one">Fitness</span>
-							<h2>Phòng tập</h2>
-							<p>Chào đón bạn đến với phòng tập hiện đại của chúng tôi, nơi khám phá sức khỏe mới và đắm chìm trong không gian tích cực, tràn đầy động lực để tập luyện.</p>
-							<a class="theme-border-btn" href="services-details.html">Xem thêm<i class="fal fa-long-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row align-items-center bg-right">
-				<div class="col-xl-6 col-lg-6 order-last order-lg-first">
-					<div class="feature__area-left">
-						<div class="feature__area-left-title">
-							<span class="subtitle__one">Experiences</span>
-							<h2>Hồ bơi</h2>
-							<p>Hòa mình trong sự tận hưởng tại hồ bơi của chúng tôi, nơi nước trong xanh và không khí tĩnh lặng tạo nên bức tranh hoàn hảo cho mỗi buổi thư giãn và đắm chìm trong sự sảng khoái.</p>
-							<a class="theme-border-btn" href="services-details.html">Xem thêm<i class="fal fa-long-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-image">
-						<img class="img__full" src="assets/img/features/feature-4.jpg" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Feature Area End -->
-	<!-- Testimonial Area Start -->	
-	<div class="testimonial__area section-padding pb-0"> 
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12">
-				   <div class="testimonial__area-bg">
-					<div class="swiper testimonial__slider">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="testimonial__area-item">
-									<div class="testimonial__area-item-image">
-										<img class="img__full" src="assets/img/avatar/testimonial-1.jpg" alt="">
-									</div>
-									<div class="testimonial__area-item-content">
-										<h4>Lisa</h4>										
-										<span>Singer</span>
-										<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta, porta lectus non, malesuada neque. Integer in tempus leo. Quisque vitae leo ac ex suscipit iaculis eu in nisl. Donec vestibulum volutpat lectus, vel aliquet massa porttitor in. Integer eleifend</p>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonial__area-item">
-									<div class="testimonial__area-item-image">
-										<img class="img__full" src="assets/img/avatar/testimonial-2.jpg" alt="">
-									</div>
-									<div class="testimonial__area-item-content">
-										<h4>David Fincher</h4>										
-										<span>UX Designer</span>
-										<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta, porta lectus non, malesuada neque. Integer in tempus leo. Quisque vitae leo ac ex suscipit iaculis eu in nisl. Donec vestibulum volutpat lectus, vel aliquet massa porttitor in. Integer eleifend</p>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="testimonial__area-item">
-									<div class="testimonial__area-item-image">
-										<img class="img__full" src="assets/img/avatar/testimonial-3.jpg" alt="">
-									</div>
-									<div class="testimonial__area-item-content">
-										<h4>Ridley Scott</h4>										
-										<span>UX Designer</span>
-										<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta, porta lectus non, malesuada neque. Integer in tempus leo. Quisque vitae leo ac ex suscipit iaculis eu in nisl. Donec vestibulum volutpat lectus, vel aliquet massa porttitor in. Integer eleifend</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="testimonial__area-item-dots">
-						<div class="pagination"></div>
-					</div>
-				   </div>
-				</div>
-			</div>
-		</div>
-	</div>	    
-	<!-- Testimonial Area End -->	
+	
 	<!-- Blog Area Start -->	
 	<div class="blog__area section-padding">
 		<div class="container">
@@ -437,3 +263,5 @@
 		</div>
 	</div>
 	<!-- Blog Area End -->	
+
+

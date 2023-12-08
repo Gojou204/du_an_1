@@ -6,9 +6,23 @@
         return $listkhachsan;
     }
 
+    // Lấy tất cả các khách sạn
+    function getAll_hotel_view() {
+        $sql = "SELECT * FROM `hotel` WHERE trangthai = 0 ORDER BY `views` DESC LIMIT 0, 3";
+        $listkhachsan = pdo_query($sql);
+        return $listkhachsan;
+    }
+
     // Lấy tất cả các khách sạn theo id thành phố
     function getAll_hotel_by_city($id_city) {
         $sql = "SELECT * FROM `hotel` WHERE `id_city` = $id_city";
+        $listkhachsan = pdo_query($sql);
+        return $listkhachsan;
+    }
+
+    // Lấy tất cả các khách sạn theo id thành phố được sắp xếp theo lượt xem từ cao -> thấp
+    function getAll_hotel_by_city_view($id_city) {
+        $sql = "SELECT * FROM `hotel` WHERE `id_city` = $id_city ORDER BY `views` DESC";
         $listkhachsan = pdo_query($sql);
         return $listkhachsan;
     }
@@ -30,6 +44,13 @@
     // Lấy tất cả các thành phố
     function getAll_city() {
         $sql = "SELECT * FROM `city`";
+        $listcity = pdo_query($sql);
+        return $listcity;
+    }
+
+    // Lấy tất cả các thành phố theo lượt xem
+    function getAll_city_view() {
+        $sql = "SELECT * FROM `city` ORDER BY `views` DESC";
         $listcity = pdo_query($sql);
         return $listcity;
     }

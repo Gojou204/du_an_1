@@ -2,6 +2,7 @@
     include "../model/pdo.php";
     include "../model/khachsan.php";
     include "../model/loaiphong.php";
+    include "../model/taikhoan.php";
     include "../model/bed.php";
 
     include "../global.php";
@@ -168,7 +169,28 @@
                 $list_bed = getAll_bed();
                 include "loaiphong/listphong.php";
                 break;
+                
+            case 'taikhoan' :
+                $listtaikhoan = loadall_taikhoan();
+                include "taikhoan/listtaikhoan.php";
+                break;
+            case 'add_taikhoan' :
+                if($_SERVER['REQUEST_METHOD'] == "POST") {
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $full_name = $_POST['full_name'];
+                    $email = $_POST['email'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $sdt = $_POST['sdt'];
+                    $cccd = $_POST['cccd'];
+                    
 
+                    add_taikhoan($user, $pass, $full_name, $email, $dia_chi, $sdt, $cccd);
+                    include "taikhoan/listtaikhoan.php"; 
+                }
+                $listtaikhoan = loadall_taikhoan();
+                include "taikhoan/add_taikhoan.php";          
+                break;
             // default:
             //     echo "<h1>ĐƯỜNG DẪN KHÔNG XÁC ĐỊNH!</h1>
             //     <a href='index.php' style='color: blue'>Quay lại trang chủ</a>";

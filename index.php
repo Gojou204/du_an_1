@@ -3,6 +3,7 @@
     include "model/khachsan.php";
     include "model/loaiphong.php";
     include "model/bed.php";
+    include "model/taikhoan.php";
 
     include "global.php";
     // include "view/header.php";
@@ -11,14 +12,48 @@
         $act = $_GET['act'];
 
         switch ($act) {
+            case "dangky":
+                if (isset($_POST['dangky'])){
+                    $email = $_POST['email'];
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    insert_taikhoan($email, $user, $pass);
+                    $thongbao = "Đăng ký thành công";
+                    header('Location: index.php?act=dangnhap'); 
+                }
+                include "view/taikhoan/dangky.php";
+                break;
+                
+            case "dangnhap":
+                if (isset($_POST['dangnhap'])){
+                    $loginMess = dangnhap($_POST['user'], $_POST['pass']);
+                }
+                include "view/taikhoan/dangnhap.php";
+                break;
+
+            case "dangxuat":
+                dangxuat();
+                header('Location: index.php'); 
+                break;
+
+            case "quenmk":
+                if(isset($_POST['guiemail'])){
+                    $email = $_POST['email'];
+                    $sendMailMess = sendMail($email);
+                }
+                include "view/taikhoan/quenmk.php";
+                break;
+
             case 'about':
                 include "view/header.php";
                 include "view/about.php";
+                include "view/footer.php"; 
                 break;
             
             case 'luxury_room' :
                 include "view/header.php";
                 include "view/chitiet_phong/luxury.php";
+                include "view/footer.php"; 
                 break; 
 
             case 'list_hotel' :
@@ -33,11 +68,13 @@
                 $list_hotel = getAll_hotel();
                 $list_city = getAll_city();
                 include "view/khachsan/list.php";
+                include "view/footer.php"; 
                 break;
 
             case 'check':
                 include "view/header.php";
                 include "view/booking_phong/list_hotel_by_city.php";
+                include "view/footer.php"; 
                 break;
 
             case 'list_hotel_by_city' :
@@ -52,6 +89,7 @@
                 $list_hotel = getAll_hotel();                   
                 $list_city = getAll_city();
                 include "view/booking_phong/list_hotel_by_city.php";
+                include "view/footer.php"; 
                 break;
             break;   
             
@@ -62,6 +100,7 @@
                 $list_a_room = getRoom_a_Hotel($_GET['id_hotel']);
                 $list_bed = getAll_bed();
                 include "view/booking_phong/listphong_hotel.php";
+                include "view/footer.php"; 
                 break;  
                 
             case 'datphong':
@@ -69,10 +108,18 @@
                 if(isset($_GET['id_room']) && ($_GET['id_room'])) {
                     $id_room = $_GET['id_room'];
 
+                    if (isset($_SESSION['user'])){
+                        $account = getOne_taikhoan($_SESSION['user']);
+                    }else{
+                        echo '<script>alert("Vui lòng đăng nhập để tiếp tục đặt phòng.");
+                              window.location.href = "index.php?act=dangnhap";</script>';
+                    }
+                    
                     $room = getOne_room($_GET['id_room']);
                     $list_bed = getAll_bed();
                 }
                 include "view/booking_phong/datphong.php";
+                include "view/footer.php"; 
                 break;
 
             case 'thanhtoan':
@@ -103,29 +150,29 @@
                     $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 
                     $orderInfo = "Thanh toán đặt phòng";
-                    $amount = "10000";
+                    $amount = "100000";
                     $orderId = rand(00,9999);
                     $redirectUrl = "http://localhost/du_an_1/index.php";
                     $ipnUrl = "http://localhost/du_an_1/index.php";
                     $extraData = "";
 
 
-                    $partnerCode = $partnerCode;
-                    $accessKey = $accessKey;
-                    $serectkey = $secretKey;
-                    $orderId = $orderId; // Mã đơn hàng
-                    $orderInfo = $orderInfo;
-                    $amount = $amount;
-                    $ipnUrl = $ipnUrl;
-                    $redirectUrl = $redirectUrl;
-                    $extraData = $extraData;
+                    // $partnerCode = $partnerCode;
+                    // $accessKey = $accessKey;
+                    // $serectkey = $secretKey;
+                    // $orderId = $orderId; // Mã đơn hàng
+                    // $orderInfo = $orderInfo;
+                    // $amount = $amount;
+                    // $ipnUrl = $ipnUrl;
+                    // $redirectUrl = $redirectUrl;
+                    // $extraData = $extraData;
 
                     $requestId = time() . "";
                     $requestType = "payWithATM";
                     // $extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
                     //before sign HMAC SHA256 signature
                     $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
-                    $signature = hash_hmac("sha256", $rawHash, $serectkey);
+                    $signature = hash_hmac("sha256", $rawHash, $secretKey);
                     $data = array('partnerCode' => $partnerCode,
                         'partnerName' => "Test",
                         "storeId" => "MomoTestStore",
@@ -165,8 +212,10 @@
         $list_city = getAll_city();
         $list_hotel = getAll_hotel();
         include "view/home.php";
+        include "view/footer.php"; 
     }
     
-    include "view/footer.php";
     
 ?>
+
+

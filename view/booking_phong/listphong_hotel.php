@@ -1,3 +1,4 @@
+
 <!-- Page Banner Start -->
 <div class="page__banner" data-background="assets/img/banner/page-banner-6.jpg">
 		<div class="container">
@@ -27,65 +28,26 @@
 				<div class="col-xl-3 col-lg-4 lg-mb-30">
 					<div class="all__sidebar">
 						<div class="all__sidebar-item">
-							<h5>Your Price</h5>
+							<h5>Tiện ích</h5>
 							<div class="all__sidebar-item-price">
 								<ul>
-									<li><i class="fal fa-bed-alt"></i>(3) giường</li>
-									<li><i class="fal fa-users"></i>(6) khách mời</li>
+									<li><i class="fa-solid fa-utensils"></i>Máy lạnh</li>
+									<li><i class="fa-solid fa-utensils"></i>Nhà hàng</li>
+									<li><i class="fa-solid fa-utensils"></i>Lễ tân 24h</li>
+									<li><i class="fa-solid fa-utensils"></i>Chỗ đậu xe</li>
+									<li><i class="fa-solid fa-utensils"></i>Thang máy</li>
+									<li><i class="fa-solid fa-utensils"></i>WiFi</li>
 								</ul>
-								<h4>$219<span>/Đêm</span></h4>
-								<a class="theme-btn" href="contact.html">Chọn phòng<i
-										class="fal fa-long-arrow-right"></i></a>
 							</div>
 						</div>
 						<div class="all__sidebar-item">
-							<h5>Danh mục</h5>
+							<h5>Danh sách phòng</h5>
 							<div class="all__sidebar-item-category">
-								<ul>
-									<li><a href="#"><i class="far fa-angle-double-right"></i>Luxury
-											Room<span>(08)</span></a></li>
-									<li><a href="#"><i class="far fa-angle-double-right"></i>Small
-											Suite<span>(06)</span></a></li>
-									<li><a href="#"><i class="far fa-angle-double-right"></i>Single<span>(05)</span></a>
-									</li>
-									<li><a href="#"><i class="far fa-angle-double-right"></i>Family<span>(09)</span></a>
-									</li>
-									<li><a href="#"><i class="far fa-angle-double-right"></i>Double
-											Room<span>(03)</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="all__sidebar-item">
-							<h5>Đặt ngay</h5>
-							<div class="all__sidebar-item-booking">
-								<div class="all__sidebar-item-booking-item mb-10">
-									<select name="select">
-										<option value="1">Nhận phòng</option>
-										<option value="2">Nhận phòng</option>
-										<option value="3">Nhận phòng</option>
-										<option value="4">Nhận phòng</option>
-										<option value="5">Nhận phòng</option>
-									</select>
-								</div>
-								<div class="all__sidebar-item-booking-item mb-10">
-									<select name="select">
-										<option value="1">Trả phòng</option>
-										<option value="2">Trả phòng</option>
-										<option value="3">Trả phòng</option>
-										<option value="4">Trả phòng</option>
-										<option value="5">Trả phòng</option>
-									</select>
-								</div>
-								<div class="all__sidebar-item-booking-item mb-30">
-									<select name="select">
-										<option value="1">Phòng</option>
-										<option value="2">Phòng</option>
-										<option value="3">Phòng</option>
-										<option value="4">Phòng</option>
-										<option value="5">Phòng</option>
-									</select>
-								</div>
-								<a class="theme-btn" href="#">Kiểm tra<i class="fal fa-long-arrow-right"></i></a>
+								<?php foreach($list_a_room as $lr){
+									extract($lr);
+									echo '	<ul>
+											<li><a href="#"><i class="far fa-angle-double-right"></i>'.$name.'</a></li></ul>';
+								}?>
 							</div>
 						</div>
 					</div>
@@ -195,3 +157,5 @@
 		</div>
 	</div>
 	<!-- Room Details End -->
+
+
